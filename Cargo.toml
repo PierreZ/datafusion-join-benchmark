@@ -1,0 +1,21 @@
+[package]
+name = "datafusion-join-benchmark"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+doctest = false # Indicate no library code
+
+[dependencies]
+# No main dependencies needed for benchmark
+
+[dev-dependencies]
+criterion = "0.5"
+datafusion = "46.0.1"
+datafusion-common = "46.0.1"
+rand = "0.8"
+tokio = { version = "1", features = ["full"] }
+
+[[bench]]
+name = "join_benchmark"
+harness = false
