@@ -7,14 +7,18 @@ edition = "2024"
 doctest = false # Indicate no library code
 
 [dependencies]
-# No main dependencies needed for benchmark
+datafusion = "46.0.1"
+datafusion-common = "46.0.1"
+# Add physical plan explicitly
+datafusion-physical-plan = "46.0.1"
+arrow = "54.0.0"
+tokio = { version = "1", features = ["full"] }
+rand = "0.8"
+async-trait = "0.1"
+parking_lot = "0.12" # For RwLock used by LazyMemoryExec
 
 [dev-dependencies]
 criterion = "0.5"
-datafusion = "46.0.1"
-datafusion-common = "46.0.1"
-rand = "0.8"
-tokio = { version = "1", features = ["full"] }
 
 [[bench]]
 name = "join_benchmark"
